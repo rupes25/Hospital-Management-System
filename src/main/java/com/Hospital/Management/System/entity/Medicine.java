@@ -1,6 +1,8 @@
 package com.Hospital.Management.System.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,9 +19,11 @@ public class Medicine {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank(message = "Drug name required.")
     @Column(name = "drug_name")
     private String drugName;
 
-    private String stock;
+    @NotNull(message = "Provide the quantity")
+    private Integer stock;
 
 }

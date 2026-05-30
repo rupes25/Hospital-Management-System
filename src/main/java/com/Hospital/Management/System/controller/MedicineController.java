@@ -23,7 +23,7 @@ public class MedicineController {
     }
 
     //by id
-    @GetMapping
+    @GetMapping("/{id}")
     public MedicineDto getMedicineById(@PathVariable Long id){
         return medicineRepoService.getMedicineById(id);
     }
@@ -34,12 +34,13 @@ public class MedicineController {
     }
 
     //update
-    @PutMapping
+    @PutMapping("/{id}")
     public MedicineDto updateMedicine(@PathVariable Long id, @RequestBody MedicineDto dto){
         return medicineRepoService.updateMedicine(id, dto);
     }
 
     //delete
+    @DeleteMapping("/{id}")
     public String deleteMedicine(@PathVariable Long id){
         medicineRepoService.deleteMedicine(id);
         return "Entry deleted";

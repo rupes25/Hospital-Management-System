@@ -37,14 +37,13 @@ public class PatientController {
     }
 
     //update
-    @PutMapping
+    @PutMapping("/{id}")
     public PatientResponseDto updatePatient(@PathVariable Long id, @RequestBody PatientRequestDto dto){
         return patientRepoService.updatePatient(id, dto);
     }
 
     //delete
     @DeleteMapping("/{id}")
-
     public String deletePatient(@PathVariable Long id){
         patientRepoService.deletePatient(id);
         return "Entry deleted";

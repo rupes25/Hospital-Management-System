@@ -11,6 +11,6 @@ import lombok.Setter;
 @AllArgsConstructor
 public class MedicineDto {
     private String drugName;
-    private String stock;
+    private Integer stock;
 
 }

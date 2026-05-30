@@ -32,7 +32,7 @@ public class Appointment {
     private String symptoms;
 
     @NotNull(message = "Provide your phone number")
-    @Min(value = 10, message = "Invalid number")
-    @Max(value = 10, message = "Invalid number")
+    @Pattern(regexp = "^[0-9]{10}$",
+            message = "Invalid number")
     private String number;
 }
